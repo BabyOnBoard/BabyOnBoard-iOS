@@ -12,7 +12,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 
   @IBOutlet weak var viewWebView: UIWebView!
   
-  let songs = ["Highway to Hell",
+  @objc let songs = ["Highway to Hell",
                "Simphony of Destruction",
                "Y.M.C.A",
                "Show Me How To Live",
@@ -31,7 +31,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     // Dispose of any resources that can be recreated.
   }
   
-  func loadYoutube(videoID:String) {
+  @objc func loadYoutube(videoID:String) {
     guard
       let youtubeURL = URL(string: "https://www.youtube.com/embed/\(videoID)")
       else { return }

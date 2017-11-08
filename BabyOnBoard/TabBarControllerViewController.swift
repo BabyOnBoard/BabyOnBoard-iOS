@@ -36,7 +36,7 @@ class TabBarControllerViewController: UITabBarController, UITabBarControllerDele
     return true
   }
   
-  func animateToTab(toIndex: Int) {
+  @objc func animateToTab(toIndex: Int) {
     
     let tabViewControllers = viewControllers!
     let fromView = selectedViewController!.view
