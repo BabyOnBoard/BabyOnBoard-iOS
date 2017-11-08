@@ -45,7 +45,53 @@ class ApiConnector{
                         failureCallBack: failure)
 
   }
+
+  static func breathing(year:Int = 0, month:Int = 0, day:Int = 0,
+                        success: @escaping (AnyObject) -> Void = {_ in },
+                        failure: @escaping (NSError) -> Void = {_ in }) -> Void{
+    //    let params: Parameters = userInfo
+    var url = apiUrl + breathingEndpoint
+
+    if year != 0 {
+      url = url + year.description
+    }
+    if month != 0{
+      url = url + "/" + String(format: "%02d", month)
+    }
+    if day != 0{
+      url = url + "/" + String(format: "%02d", day)
+    }
+
+    ApiConnector.alamofireGET(url: url,
+                              successCallback: success,
+                              failureCallBack: failure)
+
+  }
+
+
+  static func heartbeat(year:Int = 0, month:Int = 0, day:Int = 0,
+                          success: @escaping (AnyObject) -> Void = {_ in },
+                          failure: @escaping (NSError) -> Void = {_ in }) -> Void{
+    //    let params: Parameters = userInfo
+    var url = apiUrl + heartbeatEndpoint
+
+    if year != 0 {
+      url = url + year.description
+    }
+    if month != 0{
+      url = url + "/" + String(format: "%02d", month)
+    }
+    if day != 0{
+      url = url + "/" + String(format: "%02d", day)
+    }
+
+    ApiConnector.alamofireGET(url: url,
+                              successCallback: success,
+                              failureCallBack: failure)
+
+  }
 }
+
 
 
 extension ApiConnector {
