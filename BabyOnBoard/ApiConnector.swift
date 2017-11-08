@@ -12,7 +12,8 @@ import Alamofire
 
 class ApiConnector{
 
-  private static let apiUrl = "https://192.168.0.1/api/v1"
+  //TODO: make an inputable address here!!
+  private static let apiUrl = "http://192.168.0.154:8000/api/v1"
 
   private static let temperatureEndpoint = "/temperature/"
 
@@ -23,19 +24,28 @@ class ApiConnector{
   private static let movementEndpoint = "/movementEndpoint/"
 
 
-  static func currentTemperature(userInfo: Dictionary <String,Any>,
-                         success: @escaping (AnyObject) -> Void = {_ in },
-                         failure: @escaping (NSError) -> Void = {_ in }) -> Void{
-    let params: Parameters = userInfo
-    let url = apiUrl + temperatureEndpoint
-    ApiConnector.alamofirePOST(url: url,
-                        parameters: params,
+  static func temperature(year:Int = 0, month:Int = 0, day:Int = 0,
+                          success: @escaping (AnyObject) -> Void = {_ in },
+                                 failure: @escaping (NSError) -> Void = {_ in }) -> Void{
+//    let params: Parameters = userInfo
+    var url = apiUrl + temperatureEndpoint
+
+    if year != 0 {
+      url = url + year.description
+    }
+    if month != 0{
+      url = url + "/" + String(format: "%02d", month)
+    }
+    if day != 0{
+      url = url + "/" + String(format: "%02d", day)
+    }
+
+    ApiConnector.alamofireGET(url: url,
                         successCallback: success,
                         failureCallBack: failure)
 
   }
 }
-
 
 
 extension ApiConnector {
