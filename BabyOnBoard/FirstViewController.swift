@@ -21,6 +21,9 @@ class FirstViewController: UIViewController{
     // Do any additional setup after loading the view, typically from a nib.
     self.loadYoutube(videoID: "fpDXt6QNmBI")
 
+    self.viewWebView.alpha = 0
+
+    Timer.scheduledTimer(timeInterval:5.0, target: self, selector: #selector(FirstViewController.updateAllValues), userInfo: nil, repeats: true)
 
 
   }
@@ -32,23 +35,40 @@ class FirstViewController: UIViewController{
   
   @objc func loadYoutube(videoID:String) {
     guard
-      let youtubeURL = URL(string: "https://www.youtube.com/embed/\(videoID)")
+      let youtubeURL = URL(string: "http://192.168.0.154:8081")
       else { return }
     viewWebView.loadRequest( URLRequest(url: youtubeURL) )
   }
 
   override func viewDidAppear(_ animated: Bool) {
+    delay(0.2) {
+      self.updateWebViewFrame()
+      UIView.animate(withDuration: 0.3,
+                                 delay: 0,
+                                 animations: {
+                                  self.viewWebView.alpha = 1.0
+      },
+                                 completion: nil)
+    }
 
-//    updateTemperature()
   }
   
   @IBAction func statisticsButtonAction(_ sender: Any) {
     print("statistics Button Pressed")
 
-//    self.heartbeatLabel.text = "123982732"
-    updateTemperature()
-    updateBreathing()
-    updateHeartbeat()
+    self.temperatureLabel.text = "........."
+    self.breathingLabel.text = "........."
+    self.heartbeatLabel.text = "........."
+
+    self.view.isUserInteractionEnabled = false
+    updateWebViewFrame()
+    delay(2.0){
+      self.view.isUserInteractionEnabled = true
+      self.updateTemperature()
+      self.updateBreathing()
+      self.updateHeartbeat()
+    }
+
   }
 
 
@@ -101,6 +121,45 @@ class FirstViewController: UIViewController{
     ApiConnector.heartbeat(success: success, failure: error);
   }
 
+  @objc func updateAllValues(){
+    updateWebViewFrame()
+    self.updateTemperature()
+    self.updateBreathing()
+    self.updateHeartbeat()
+    print("timer \(Date())")
+  }
+
+  //MARK: Utilities
+
+
+  func delay(_ delay: Double, closure: @escaping ()->(Void)) {
+    let when = DispatchTime.now() + 1.5
+
+    DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
+  }
+
+  func updateWebViewFrame(){
+    
+    let contentSize = viewWebView.scrollView.contentSize
+    let viewSize = viewWebView.bounds.size
+    viewWebView.contentMode = .scaleAspectFit
+    viewWebView.scrollView.contentMode = .scaleAspectFit
+    viewWebView.scrollView.bounces = false
+    viewWebView.scrollView.isScrollEnabled = false
+    if #available(iOS 11.0, *) {
+      viewWebView.scrollView.contentInsetAdjustmentBehavior = .never
+    } else {
+      // Fallback on earlier versions
+    }
+
+    viewWebView.scrollView.contentSize = viewSize
+    let rw = viewSize.width / contentSize.width
+
+    viewWebView.scrollView.minimumZoomScale = rw
+    viewWebView.scrollView.maximumZoomScale = rw
+    viewWebView.scrollView.zoomScale = rw
+
+  }
 
 }
 

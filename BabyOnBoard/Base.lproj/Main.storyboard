@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5k-X3-ca8">
-                                <rect key="frame" x="63" y="267" width="296" height="70"/>
+                                <rect key="frame" x="63" y="302" width="296" height="70"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone_heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="6tu-c3-OZa">
                                         <rect key="frame" x="-53" y="-15" width="100" height="100"/>
@@ -55,7 +55,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.72503584623336792" green="0.90736472606658936" blue="0.55230724811553955" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.78461928760509858" green="0.83406805514771953" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="6Pv-4n-roM" firstAttribute="leading" secondItem="6tu-c3-OZa" secondAttribute="trailing" constant="8" id="52E-W5-8UG"/>
                                     <constraint firstAttribute="height" constant="70" id="9L4-Ri-Zlp"/>
@@ -76,8 +76,8 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQi-wn-nrf" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                <rect key="frame" x="63" y="397" width="296" height="70"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQi-wn-nrf">
+                                <rect key="frame" x="63" y="407" width="296" height="70"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone_temperature.png" translatesAutoresizingMaskIntoConstraints="NO" id="lAO-nB-3I1">
                                         <rect key="frame" x="-53" y="-15" width="100" height="100"/>
@@ -109,7 +109,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.72503584623336792" green="0.90736472606658936" blue="0.55230724811553955" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.78461928760509858" green="0.83406805514771953" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="sDB-9q-c61" secondAttribute="bottom" constant="17" id="2tc-9y-IdN"/>
                                     <constraint firstItem="lAO-nB-3I1" firstAttribute="top" secondItem="xQi-wn-nrf" secondAttribute="top" constant="-15" id="9s5-NV-1zU"/>
@@ -131,7 +131,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIW-jU-F2s">
-                                <rect key="frame" x="63" y="527" width="296" height="70"/>
+                                <rect key="frame" x="63" y="512" width="296" height="70"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone_breathing.png" translatesAutoresizingMaskIntoConstraints="NO" id="dQB-x4-a0i">
                                         <rect key="frame" x="-53" y="-15" width="100" height="100"/>
@@ -163,7 +163,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.72503584623336792" green="0.90736472606658936" blue="0.55230724811553955" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.78461928760509858" green="0.83406805514771953" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="xCR-9W-HYK" firstAttribute="leading" secondItem="dQB-x4-a0i" secondAttribute="trailing" constant="8" id="1vo-PM-Fx8"/>
                                     <constraint firstItem="xCR-9W-HYK" firstAttribute="top" secondItem="yIW-jU-F2s" secondAttribute="top" constant="18" id="3aA-va-tMd"/>
@@ -185,11 +185,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <webView clipsSubviews="YES" contentMode="scaleToFill" suppressesIncrementalRendering="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OsS-2G-HKz">
-                                <rect key="frame" x="16" y="37" width="343" height="190"/>
+                                <rect key="frame" x="16" y="37" width="343" height="240"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="190" id="u1i-dG-5ZM"/>
+                                    <constraint firstAttribute="height" constant="240" id="u1i-dG-5ZM"/>
                                 </constraints>
                                 <dataDetectorType key="dataDetectorTypes"/>
                                 <userDefinedRuntimeAttributes>
@@ -200,19 +200,19 @@
                                 </userDefinedRuntimeAttributes>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" red="0.99926882979999998" green="0.93967330459999998" blue="0.66540676359999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99920481443405151" green="0.86220759153366089" blue="0.8609049916267395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="c5k-X3-ca8" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="47" id="7WU-MV-tRh"/>
-                            <constraint firstItem="xQi-wn-nrf" firstAttribute="top" secondItem="c5k-X3-ca8" secondAttribute="bottom" constant="60" id="8ch-TI-nTs"/>
+                            <constraint firstItem="xQi-wn-nrf" firstAttribute="top" secondItem="c5k-X3-ca8" secondAttribute="bottom" constant="35" id="8ch-TI-nTs"/>
                             <constraint firstItem="yIW-jU-F2s" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="47" id="HHU-FH-e4O"/>
                             <constraint firstItem="OsS-2G-HKz" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="Mye-Wt-mGk"/>
                             <constraint firstItem="yIW-jU-F2s" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="NtS-xi-qlg"/>
                             <constraint firstItem="xQi-wn-nrf" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="47" id="P3E-9J-cYH"/>
-                            <constraint firstItem="c5k-X3-ca8" firstAttribute="top" secondItem="OsS-2G-HKz" secondAttribute="bottom" constant="40" id="QlY-pi-7Gl"/>
+                            <constraint firstItem="c5k-X3-ca8" firstAttribute="top" secondItem="OsS-2G-HKz" secondAttribute="bottom" constant="25" id="QlY-pi-7Gl"/>
                             <constraint firstItem="xQi-wn-nrf" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="S4W-0D-jcw"/>
                             <constraint firstItem="OsS-2G-HKz" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="17" id="ggG-LU-Jxh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OsS-2G-HKz" secondAttribute="trailing" id="ihZ-w2-qzg"/>
-                            <constraint firstItem="yIW-jU-F2s" firstAttribute="top" secondItem="xQi-wn-nrf" secondAttribute="bottom" constant="60" id="kmq-M8-xGh"/>
+                            <constraint firstItem="yIW-jU-F2s" firstAttribute="top" secondItem="xQi-wn-nrf" secondAttribute="bottom" constant="35" id="kmq-M8-xGh"/>
                             <constraint firstItem="c5k-X3-ca8" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="r5X-3O-hzW"/>
                         </constraints>
                     </view>
@@ -496,7 +496,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.33849650621414185" green="0.73093599081039429" blue="0.92497521638870239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.69019607843137254" green="0.89817661046981812" blue="0.4870181679725647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.78615444898605347" green="0.83626717329025269" blue="0.99814313650131226" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="selectedImageTintColor" red="0.33849650621414185" green="0.73093599081039429" blue="0.92497521638870239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
