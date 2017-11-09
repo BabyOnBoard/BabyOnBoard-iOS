@@ -25,8 +25,24 @@ class ScheduleViewController: UIViewController {
 
     print("MOVEMENT Type \(self.movementType) >> secondas \(secontsKeepMooving)")
 
-    so
-    //TODO: send the request to start movement
+
+    let success = { (result:AnyObject) -> Void in
+
+    }
+
+    let error = { (result:NSError) -> Void in
+      if result.code == 4 {
+        //TODO: MENSAGEM DE SUCESSO!
+        self.dismiss(animated: true, completion: nil)
+        return
+      }
+      print("HOUVE UM ERRO")
+    }
+
+    ApiConnector.movement(type: self.movementType,
+                          duration: Int(secontsKeepMooving),
+                          success:success,
+                          failure:error)
   }
 
   @IBAction func cancelButtonAction(_ sender: Any) {
@@ -37,16 +53,4 @@ class ScheduleViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

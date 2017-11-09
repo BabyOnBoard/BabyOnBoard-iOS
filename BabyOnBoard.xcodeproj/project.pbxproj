@@ -183,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				55A5CBE21F58B16F0032F754 /* AppDelegate.swift */,
+				55D087D01FB345CE00904135 /* ApiConnector.swift */,
 				55A5CBE41F58B16F0032F754 /* FirstViewController.swift */,
 				55A5CBE61F58B16F0032F754 /* SecondViewController.swift */,
 				55A5CC2B1F5990C30032F754 /* MovementViewController.swift */,
@@ -196,7 +197,6 @@
 				55A5CBEB1F58B16F0032F754 /* Assets.xcassets */,
 				55A5CBED1F58B16F0032F754 /* LaunchScreen.storyboard */,
 				55A5CBF01F58B16F0032F754 /* Info.plist */,
-				55D087D01FB345CE00904135 /* ApiConnector.swift */,
 			);
 			path = BabyOnBoard;
 			sourceTree = "<group>";

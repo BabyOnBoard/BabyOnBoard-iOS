@@ -21,7 +21,7 @@ class ApiConnector{
 
   private static let breathingEndpoint = "/breathing/"
 
-  private static let movementEndpoint = "/movementEndpoint/"
+  private static let movementEndpoint = "/movement/"
 
 
   static func temperature(year:Int = 0, month:Int = 0, day:Int = 0,
@@ -90,6 +90,23 @@ class ApiConnector{
                               failureCallBack: failure)
 
   }
+
+
+  static func movement(type:String, duration:Int,
+                        success: @escaping (AnyObject) -> Void = {_ in },
+                        failure: @escaping (NSError) -> Void = {_ in }) -> Void{
+    //    let params: Parameters = userInfo
+    let url = apiUrl + movementEndpoint
+    let parameters = ["type":type,
+                      "duration":duration] as [String : Any]
+    
+
+    ApiConnector.alamofirePOST(url: url,
+                               parameters: parameters,
+                               successCallback: success,
+                               failureCallBack: failure)
+  }
+
 }
 
 
