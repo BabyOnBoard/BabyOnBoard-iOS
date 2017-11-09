@@ -40,6 +40,16 @@
 		55A5CC401F59A55B0032F754 /* smell-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 55A5CC3F1F59A55B0032F754 /* smell-512.png */; };
 		55A5CC421F59A7320032F754 /* thermometer.png in Resources */ = {isa = PBXBuildFile; fileRef = 55A5CC411F59A7320032F754 /* thermometer.png */; };
 		55D087D11FB345CE00904135 /* ApiConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D087D01FB345CE00904135 /* ApiConnector.swift */; };
+		55D087E21FB3D45100904135 /* icone_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D087D81FB3D44D00904135 /* icone_graph.png */; };
+		55D087E31FB3D45100904135 /* icone_breathing.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D087D91FB3D44E00904135 /* icone_breathing.png */; };
+		55D087E41FB3D45100904135 /* icone_moving_crib.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D087DA1FB3D44E00904135 /* icone_moving_crib.png */; };
+		55D087E51FB3D45100904135 /* icone_moving_crib_vibrate.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D087DB1FB3D44E00904135 /* icone_moving_crib_vibrate.png */; };
+		55D087E61FB3D45100904135 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D087DC1FB3D44F00904135 /* logo.png */; };
+		55D087E71FB3D45100904135 /* icone_moving_crib_Z.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D087DD1FB3D45000904135 /* icone_moving_crib_Z.png */; };
+		55D087E81FB3D45100904135 /* icone_crib_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D087DE1FB3D45000904135 /* icone_crib_search.png */; };
+		55D087E91FB3D45100904135 /* icone_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D087DF1FB3D45000904135 /* icone_heart.png */; };
+		55D087EA1FB3D45100904135 /* icone_moving_crib_X.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D087E01FB3D45100904135 /* icone_moving_crib_X.png */; };
+		55D087EB1FB3D45100904135 /* icone_temperature.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D087E11FB3D45100904135 /* icone_temperature.png */; };
 		C4609676D00780C7718A9A65 /* Pods_BabyOnBoardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60D9D6F81D16C376B1C3DCD /* Pods_BabyOnBoardTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +109,16 @@
 		55A5CC3F1F59A55B0032F754 /* smell-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smell-512.png"; sourceTree = "<group>"; };
 		55A5CC411F59A7320032F754 /* thermometer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thermometer.png; sourceTree = "<group>"; };
 		55D087D01FB345CE00904135 /* ApiConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConnector.swift; sourceTree = "<group>"; };
+		55D087D81FB3D44D00904135 /* icone_graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_graph.png; sourceTree = "<group>"; };
+		55D087D91FB3D44E00904135 /* icone_breathing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_breathing.png; sourceTree = "<group>"; };
+		55D087DA1FB3D44E00904135 /* icone_moving_crib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_moving_crib.png; sourceTree = "<group>"; };
+		55D087DB1FB3D44E00904135 /* icone_moving_crib_vibrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_moving_crib_vibrate.png; sourceTree = "<group>"; };
+		55D087DC1FB3D44F00904135 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		55D087DD1FB3D45000904135 /* icone_moving_crib_Z.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_moving_crib_Z.png; sourceTree = "<group>"; };
+		55D087DE1FB3D45000904135 /* icone_crib_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_crib_search.png; sourceTree = "<group>"; };
+		55D087DF1FB3D45000904135 /* icone_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_heart.png; sourceTree = "<group>"; };
+		55D087E01FB3D45100904135 /* icone_moving_crib_X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_moving_crib_X.png; sourceTree = "<group>"; };
+		55D087E11FB3D45100904135 /* icone_temperature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_temperature.png; sourceTree = "<group>"; };
 		5B32EE448D66991C0E149AF1 /* Pods-BabyOnBoardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyOnBoardTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabyOnBoardTests/Pods-BabyOnBoardTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6928CB95C002CEE0F7D8CB47 /* Pods-BabyOnBoardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyOnBoardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabyOnBoardTests/Pods-BabyOnBoardTests.release.xcconfig"; sourceTree = "<group>"; };
 		7053CADD891B2DE0AA1CA280 /* Pods-BabyOnBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyOnBoard.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabyOnBoard/Pods-BabyOnBoard.release.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +189,8 @@
 				55A5CC2D1F5990D50032F754 /* ConnectionViewController.swift */,
 				55A5CC141F58E9040032F754 /* TabBarControllerViewController.swift */,
 				55A5CC2F1F59978C0032F754 /* ScheduleViewController.swift */,
+				55D087D91FB3D44E00904135 /* icone_breathing.png */,
+				55D087EC1FB3D45900904135 /* NewIcons */,
 				55A5CC281F598A5D0032F754 /* Resources */,
 				55A5CBE81F58B16F0032F754 /* Main.storyboard */,
 				55A5CBEB1F58B16F0032F754 /* Assets.xcassets */,
@@ -236,6 +258,22 @@
 				55A5CC201F59843F0032F754 /* crib-32.png */,
 			);
 			name = 32;
+			sourceTree = "<group>";
+		};
+		55D087EC1FB3D45900904135 /* NewIcons */ = {
+			isa = PBXGroup;
+			children = (
+				55D087DE1FB3D45000904135 /* icone_crib_search.png */,
+				55D087D81FB3D44D00904135 /* icone_graph.png */,
+				55D087DF1FB3D45000904135 /* icone_heart.png */,
+				55D087DB1FB3D44E00904135 /* icone_moving_crib_vibrate.png */,
+				55D087E01FB3D45100904135 /* icone_moving_crib_X.png */,
+				55D087DD1FB3D45000904135 /* icone_moving_crib_Z.png */,
+				55D087DA1FB3D44E00904135 /* icone_moving_crib.png */,
+				55D087E11FB3D45100904135 /* icone_temperature.png */,
+				55D087DC1FB3D44F00904135 /* logo.png */,
+			);
+			name = NewIcons;
 			sourceTree = "<group>";
 		};
 		8866C59481223BA1E6C8C4E0 /* Pods */ = {
@@ -383,22 +421,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55D087E61FB3D45100904135 /* logo.png in Resources */,
 				55A5CC361F5999310032F754 /* foward.png in Resources */,
 				55A5CBEF1F58B16F0032F754 /* LaunchScreen.storyboard in Resources */,
 				55A5CC251F598A570032F754 /* crib-horizontal.png in Resources */,
+				55D087E51FB3D45100904135 /* icone_moving_crib_vibrate.png in Resources */,
+				55D087E71FB3D45100904135 /* icone_moving_crib_Z.png in Resources */,
 				55A5CC1F1F5983AA0032F754 /* bar-chart-32.png in Resources */,
 				55A5CC3E1F59A4990032F754 /* heartbeat.png in Resources */,
+				55D087E21FB3D45100904135 /* icone_graph.png in Resources */,
 				55A5CC271F598A570032F754 /* crib-vertical.png in Resources */,
+				55D087E81FB3D45100904135 /* icone_crib_search.png in Resources */,
 				55A5CC1C1F59832A0032F754 /* wifi-32.png in Resources */,
 				55A5CC1B1F59832A0032F754 /* thermometer-three-quarters-32.png in Resources */,
 				55A5CC421F59A7320032F754 /* thermometer.png in Resources */,
 				55A5CBEC1F58B16F0032F754 /* Assets.xcassets in Resources */,
 				55A5CC171F597FB20032F754 /* wifi.png in Resources */,
+				55D087E41FB3D45100904135 /* icone_moving_crib.png in Resources */,
 				55A5CC401F59A55B0032F754 /* smell-512.png in Resources */,
 				55A5CBEA1F58B16F0032F754 /* Main.storyboard in Resources */,
 				55A5CC3C1F59A3830032F754 /* placeholder-graph.png in Resources */,
+				55D087E91FB3D45100904135 /* icone_heart.png in Resources */,
 				55A5CC381F5999310032F754 /* pause.png in Resources */,
 				55A5CC1D1F59832A0032F754 /* youtube-play-32.png in Resources */,
+				55D087EA1FB3D45100904135 /* icone_moving_crib_X.png in Resources */,
+				55D087E31FB3D45100904135 /* icone_breathing.png in Resources */,
+				55D087EB1FB3D45100904135 /* icone_temperature.png in Resources */,
 				55A5CC371F5999310032F754 /* play.png in Resources */,
 				55A5CC261F598A570032F754 /* crib-vibrate.png in Resources */,
 				55A5CC351F5999310032F754 /* rewind.png in Resources */,
@@ -462,10 +510,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BabyOnBoard/Pods-BabyOnBoard-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTMorphingLabel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -17,7 +17,7 @@ class ApiConnector{
 
   private static let temperatureEndpoint = "/temperature/"
 
-  private static let heartbeatEndpoint = "/heartbeat/"
+  private static let heartbeatEndpoint = "/heartbeats/"
 
   private static let breathingEndpoint = "/breathing/"
 

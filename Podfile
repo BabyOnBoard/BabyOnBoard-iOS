@@ -7,7 +7,7 @@ target 'BabyOnBoard' do
 
   # Pods for BabyOnBoard
   pod 'Alamofire'
-
+  pod 'LTMorphingLabel'
   target 'BabyOnBoardTests' do
     inherit! :search_paths
     # Pods for testing

@@ -12,11 +12,16 @@ class FirstViewController: UIViewController{
 
   @IBOutlet weak var viewWebView: UIWebView!
   
+  @IBOutlet weak var heartbeatLabel: UILabel!
+  @IBOutlet weak var temperatureLabel: UILabel!
+  @IBOutlet weak var breathingLabel: UILabel!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     self.loadYoutube(videoID: "fpDXt6QNmBI")
+
+
 
   }
 
@@ -34,35 +39,67 @@ class FirstViewController: UIViewController{
 
   override func viewDidAppear(_ animated: Bool) {
 
+//    updateTemperature()
+  }
+  
+  @IBAction func statisticsButtonAction(_ sender: Any) {
+    print("statistics Button Pressed")
+
+//    self.heartbeatLabel.text = "123982732"
+    updateTemperature()
+    updateBreathing()
+    updateHeartbeat()
+  }
+
+
+  //MARK:UpdateLabelsRequest
+  func updateTemperature(){
     let success = { (result:AnyObject) -> Void in
-      print("RESULTS >> \(result)")
+      let json = result as! Dictionary<String,AnyObject>
+      self.temperatureLabel.text = (json["temperature"] as? String ?? "--") + "ºC"
     }
 
     let error = { (result:NSError) -> Void in
       print("AWESOME ERROR \(result)")
     }
-
-    ApiConnector.temperature(year:2017,success: success, failure: error);
+    ApiConnector.temperature(success: success, failure: error);
   }
-  
-  
-  
-  //MARK: TableViewDataSource
-//  public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//    return songs.count
-//  }
-//
-//
-//  public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-//    let cell = UITableViewCell.init(style: .default, reuseIdentifier: "simpleCell")
-//
-//    cell.textLabel?.text = songs[indexPath.row]
-//    cell.imageView?.image = UIImage(named: "music.png")
-//    cell.backgroundColor = UIColor.init(red: 255, green: 237, blue:170, alpha: 0.5)
-//    cell.backgroundView?.backgroundColor = UIColor.init(red: 255, green: 237, blue:170, alpha: 0.5)
-//    cell.contentView.backgroundColor = UIColor.init(red: 255, green: 237, blue:170, alpha: 0.5)
-//    return cell
-//  }
+
+  func updateBreathing(){
+    let success = { (result:AnyObject) -> Void in
+      let json = result as! Dictionary<String,AnyObject>
+      let isBreathing = json["is_breathing"] as? Bool
+      var labelText = ""
+
+      if isBreathing == true {
+        labelText = "Normal"
+      } else {
+        labelText = "Baixa"
+      }
+      self.breathingLabel.text = labelText
+
+    }
+
+    let error = { (result:NSError) -> Void in
+      print("AWESOME ERROR \(result)")
+    }
+    ApiConnector.breathing(success: success, failure: error);
+  }
+
+  func updateHeartbeat(){
+    let success = { (result:AnyObject) -> Void in
+      let json = result as! Dictionary<String,AnyObject>
+      let heartbeat = (json["beats"] as? Float ?? 0.0)
+
+
+      self.heartbeatLabel.text = String(heartbeat ) + "bpm"
+    }
+
+    let error = { (result:NSError) -> Void in
+      print("AWESOME ERROR \(result)")
+    }
+    ApiConnector.heartbeat(success: success, failure: error);
+  }
 
 
 }
