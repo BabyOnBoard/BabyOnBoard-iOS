@@ -10,13 +10,26 @@ import UIKit
 
 class ScheduleViewController: UIViewController {
 
-    override func viewDidLoad() {
+  @IBOutlet weak var datePicker: UIDatePicker!
+
+  var movementType:String = ""
+  
+  override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func cancelButtonAction(_ sender: Any) {
+  @IBAction func initButtonAction(_ sender: Any) {
+    let secontsKeepMooving = datePicker.countDownDuration
+
+    print("MOVEMENT Type \(self.movementType) >> secondas \(secontsKeepMooving)")
+
+    so
+    //TODO: send the request to start movement
+  }
+
+  @IBAction func cancelButtonAction(_ sender: Any) {
       self.dismiss(animated: true, completion: nil)
     }
   

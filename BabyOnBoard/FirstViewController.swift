@@ -129,9 +129,8 @@ class FirstViewController: UIViewController{
     print("timer \(Date())")
   }
 
+
   //MARK: Utilities
-
-
   func delay(_ delay: Double, closure: @escaping ()->(Void)) {
     let when = DispatchTime.now() + 1.5
 

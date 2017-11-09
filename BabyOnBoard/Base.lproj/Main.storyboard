@@ -241,69 +241,77 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gx-gt-UX2">
-                                <rect key="frame" x="95" y="63" width="184" height="122"/>
+                                <rect key="frame" x="87" y="45" width="200" height="122"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="184" id="9aV-f5-EWK"/>
+                                    <constraint firstAttribute="width" constant="200" id="9aV-f5-EWK"/>
                                     <constraint firstAttribute="height" constant="122" id="GYo-es-LAM"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="crib-horizontal.png"/>
+                                <state key="normal" image="icone_moving_crib_X.png"/>
                                 <connections>
                                     <action selector="horizontalCribButtonAction:" destination="L8G-tg-sq8" eventType="touchUpInside" id="8ca-uN-ZFj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1L-LD-poj">
-                                <rect key="frame" x="116" y="206" width="143" height="159"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1L-LD-poj">
+                                <rect key="frame" x="87.5" y="188" width="200" height="125"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="159" id="h1n-jU-Ugt"/>
-                                    <constraint firstAttribute="width" constant="143" id="ltK-bc-bku"/>
+                                    <constraint firstAttribute="height" constant="125" id="h1n-jU-Ugt"/>
+                                    <constraint firstAttribute="width" constant="200" id="ltK-bc-bku"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="crib-vertical.png"/>
+                                <state key="normal" image="icone_moving_crib_Z.png"/>
                                 <connections>
                                     <action selector="verticalCribButtonAction:" destination="L8G-tg-sq8" eventType="touchUpInside" id="il3-hU-ysS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kud-Sn-Byb">
-                                <rect key="frame" x="79" y="386" width="217" height="152"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kud-Sn-Byb">
+                                <rect key="frame" x="79.5" y="334" width="217" height="152"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="217" id="cI4-e9-ibd"/>
                                     <constraint firstAttribute="height" constant="152" id="tkw-sK-PH3"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="crib-vibrate.png"/>
+                                <state key="normal" image="icone_moving_crib_vibrate.png"/>
                                 <connections>
                                     <action selector="vibrateCribButtonAction:" destination="L8G-tg-sq8" eventType="touchUpInside" id="q8t-oj-1JG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYK-XN-fAV">
-                                <rect key="frame" x="275" y="518" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.99955826999999997" green="0.68140399460000001" blue="0.68395531180000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYK-XN-fAV">
+                                <rect key="frame" x="16" y="511" width="343" height="80"/>
+                                <color key="backgroundColor" red="0.98958843946456909" green="0.34268077484613535" blue="0.3838545008676168" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="SJC-1P-eYp"/>
-                                    <constraint firstAttribute="width" constant="100" id="nav-Og-lj2"/>
+                                    <constraint firstAttribute="height" constant="80" id="35b-1d-7Ld"/>
+                                    <constraint firstAttribute="width" constant="343" id="xoS-hJ-XfE"/>
                                 </constraints>
-                                <state key="normal" title="Cancelar">
-                                    <color key="titleColor" red="0.090196080509999998" green="0.0" blue="0.30196079609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Parar Movimento">
+                                            <attributes>
+                                                <color key="NSColor" red="0.9349059420722603" green="0.94416243654822329" blue="0.94416243654822329" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="36" name="ChalkboardSE-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="50"/>
+                                        <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="cancelButtonAction:" destination="Lto-w7-3te" eventType="touchUpInside" id="Dwu-NB-DB9"/>
+                                    <action selector="cancelMovementAction:" destination="L8G-tg-sq8" eventType="touchUpInside" id="FV8-id-llo"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.99926882979999998" green="0.93967330459999998" blue="0.66540676359999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99920481443405151" green="0.86220759153366089" blue="0.8609049916267395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="z1L-LD-poj" firstAttribute="top" secondItem="6gx-gt-UX2" secondAttribute="bottom" constant="21" id="AaA-uC-QLh"/>
                             <constraint firstItem="kud-Sn-Byb" firstAttribute="top" secondItem="z1L-LD-poj" secondAttribute="bottom" constant="21" id="NKV-UI-zCI"/>
                             <constraint firstItem="6gx-gt-UX2" firstAttribute="centerX" secondItem="7dI-ks-7dU" secondAttribute="centerX" id="OQy-nc-Ggp"/>
-                            <constraint firstAttribute="trailing" secondItem="wYK-XN-fAV" secondAttribute="trailing" id="OXn-N3-AB1"/>
-                            <constraint firstAttribute="bottom" secondItem="wYK-XN-fAV" secondAttribute="bottom" constant="49" id="Zyf-yd-NEk"/>
-                            <constraint firstItem="6gx-gt-UX2" firstAttribute="top" secondItem="2W4-zT-YTa" secondAttribute="bottom" constant="43" id="eJm-qU-0fj"/>
+                            <constraint firstItem="6gx-gt-UX2" firstAttribute="top" secondItem="2W4-zT-YTa" secondAttribute="bottom" constant="25" id="eJm-qU-0fj"/>
                             <constraint firstItem="z1L-LD-poj" firstAttribute="centerX" secondItem="7dI-ks-7dU" secondAttribute="centerX" id="fkA-BJ-4Ia"/>
                             <constraint firstItem="kud-Sn-Byb" firstAttribute="centerX" secondItem="7dI-ks-7dU" secondAttribute="centerX" id="gBs-ze-yaT"/>
+                            <constraint firstItem="wYK-XN-fAV" firstAttribute="centerX" secondItem="7dI-ks-7dU" secondAttribute="centerX" id="nXs-8t-JFF"/>
+                            <constraint firstItem="wYK-XN-fAV" firstAttribute="top" secondItem="kud-Sn-Byb" secondAttribute="bottom" constant="25" id="roZ-FN-9um"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Movimento" image="crib-32.png" id="CD1-T2-aIv"/>
@@ -329,8 +337,8 @@
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wc4-Z3-lVe">
                                 <rect key="frame" x="65" y="110" width="244" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="525927600.367329">
-                                    <!--2017-09-01 03:00:00 +0000-->
+                                <date key="date" timeIntervalSinceReferenceDate="525927660.367329">
+                                    <!--2017-09-01 03:01:00 +0000-->
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxV-DM-793">
@@ -349,6 +357,9 @@
                                         <integer key="value" value="75"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="initButtonAction:" destination="Lto-w7-3te" eventType="touchUpInside" id="fDp-SJ-sUK"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psZ-Jz-ZUV">
                                 <rect key="frame" x="78" y="38" width="218" height="51"/>
@@ -400,6 +411,9 @@
                             <constraint firstItem="kxV-DM-793" firstAttribute="centerX" secondItem="otZ-Cr-1mj" secondAttribute="centerX" id="y1n-nq-9Gz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Wc4-Z3-lVe" id="aW4-LH-hb8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kqC-iD-Qeu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -512,12 +526,12 @@
     </scenes>
     <resources>
         <image name="crib-32.png" width="32" height="32"/>
-        <image name="crib-horizontal.png" width="461" height="284"/>
-        <image name="crib-vertical.png" width="305" height="383"/>
-        <image name="crib-vibrate.png" width="468" height="307"/>
         <image name="icone_breathing.png" width="114" height="115"/>
         <image name="icone_graph.png" width="91" height="89"/>
         <image name="icone_heart.png" width="115" height="113"/>
+        <image name="icone_moving_crib_X.png" width="422" height="186"/>
+        <image name="icone_moving_crib_Z.png" width="339" height="184"/>
+        <image name="icone_moving_crib_vibrate.png" width="208" height="169"/>
         <image name="icone_temperature.png" width="116" height="115"/>
         <image name="wifi-32.png" width="32" height="32"/>
         <image name="wifi.png" width="640" height="471"/>

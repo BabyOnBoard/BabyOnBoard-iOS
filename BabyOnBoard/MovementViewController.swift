@@ -10,6 +10,8 @@ import UIKit
 
 class MovementViewController: UIViewController {
 
+  var selectedMovement:String = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,14 +36,20 @@ class MovementViewController: UIViewController {
     self.performSegue(withIdentifier: "toSchedule", sender: self)
   }
 
-    /*
+  @IBAction func cancelMovementAction(_ sender: Any) {
+    print("CANCEL MOVEMENT")
+  }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+      var destination = segue.destination as! ScheduleViewController
+      destination.movementType = self.selectedMovement
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+
+
     }
-    */
 
 }
