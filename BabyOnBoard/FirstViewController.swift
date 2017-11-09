@@ -110,8 +110,6 @@ class FirstViewController: UIViewController{
     let success = { (result:AnyObject) -> Void in
       let json = result as! Dictionary<String,AnyObject>
       let heartbeat = (json["beats"] as? Float ?? 0.0)
-
-
       self.heartbeatLabel.text = String(heartbeat ) + "bpm"
     }
 

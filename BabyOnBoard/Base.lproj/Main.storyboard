@@ -336,25 +336,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wc4-Z3-lVe">
-                                <rect key="frame" x="65" y="110" width="244" height="216"/>
+                                <rect key="frame" x="16" y="110" width="343" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="525927660.367329">
                                     <!--2017-09-01 03:01:00 +0000-->
                                 </date>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxV-DM-793">
-                                <rect key="frame" x="112" y="355" width="150" height="150"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kxV-DM-793">
+                                <rect key="frame" x="16" y="351" width="343" height="150"/>
                                 <color key="backgroundColor" red="0.69065791369999996" green="0.89817661049999997" blue="0.48701816799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="czq-Y5-8EU"/>
-                                    <constraint firstAttribute="width" constant="150" id="lWm-ig-beb"/>
+                                    <constraint firstAttribute="width" constant="343" id="lWm-ig-beb"/>
                                 </constraints>
-                                <state key="normal" title="Iniciar">
-                                    <color key="titleColor" red="0.090196080509999998" green="0.0" blue="0.30196079609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Iniciar">
+                                            <attributes>
+                                                <color key="NSColor" red="0.090196080509999998" green="0.0" blue="0.30196079609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="24" name="ChalkboardSE-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="75"/>
+                                        <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -368,29 +381,36 @@
                                     <constraint firstAttribute="width" constant="218" id="yCC-qJ-c3a"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="Ajuste o timer...">
+                                    <fragment content="Ajuste o tempo...">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="26"/>
+                                            <font key="NSFont" size="24" name="ChalkboardSE-Regular"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05W-rx-4Vu">
-                                <rect key="frame" x="137" y="523" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.99955826997756958" green="0.6814039945602417" blue="0.68395531177520752" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="05W-rx-4Vu">
+                                <rect key="frame" x="16" y="519" width="343" height="100"/>
+                                <color key="backgroundColor" red="0.986491858959198" green="0.34227657318115234" blue="0.38314470648765564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="EcZ-xe-FNo"/>
-                                    <constraint firstAttribute="width" constant="100" id="F3w-Fu-wzu"/>
+                                    <constraint firstAttribute="width" constant="343" id="F3w-Fu-wzu"/>
                                 </constraints>
-                                <state key="normal" title="Cancelar">
-                                    <color key="titleColor" red="0.090196080509999998" green="0.0" blue="0.30196079609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Cancelar">
+                                            <attributes>
+                                                <color key="NSColor" red="0.090196080509999998" green="0.0" blue="0.30196079609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="24" name="ChalkboardSE-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="50"/>
+                                        <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -398,16 +418,16 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.99926882979999998" green="0.93967330459999998" blue="0.66540676359999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99920481443405151" green="0.86220759153366089" blue="0.8609049916267395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="05W-rx-4Vu" firstAttribute="top" secondItem="kxV-DM-793" secondAttribute="bottom" constant="18" id="9Ft-rh-J0W"/>
                             <constraint firstItem="05W-rx-4Vu" firstAttribute="centerX" secondItem="otZ-Cr-1mj" secondAttribute="centerX" id="E3v-9b-c5Z"/>
                             <constraint firstItem="psZ-Jz-ZUV" firstAttribute="centerX" secondItem="otZ-Cr-1mj" secondAttribute="centerX" id="Mmr-YO-7cz"/>
-                            <constraint firstItem="kxV-DM-793" firstAttribute="top" secondItem="Wc4-Z3-lVe" secondAttribute="bottom" constant="29" id="VhZ-zd-fDA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Wc4-Z3-lVe" secondAttribute="trailing" constant="50" id="inq-4H-eWq"/>
+                            <constraint firstItem="kxV-DM-793" firstAttribute="top" secondItem="Wc4-Z3-lVe" secondAttribute="bottom" constant="25" id="VhZ-zd-fDA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wc4-Z3-lVe" secondAttribute="trailing" id="inq-4H-eWq"/>
                             <constraint firstItem="psZ-Jz-ZUV" firstAttribute="top" secondItem="c33-XM-Xmh" secondAttribute="bottom" constant="18" id="mFa-ev-xIu"/>
                             <constraint firstItem="Wc4-Z3-lVe" firstAttribute="top" secondItem="psZ-Jz-ZUV" secondAttribute="bottom" constant="21" id="rB3-p1-pIe"/>
-                            <constraint firstItem="Wc4-Z3-lVe" firstAttribute="leading" secondItem="otZ-Cr-1mj" secondAttribute="leadingMargin" constant="49" id="w6r-GT-qGG"/>
+                            <constraint firstItem="Wc4-Z3-lVe" firstAttribute="leading" secondItem="otZ-Cr-1mj" secondAttribute="leadingMargin" id="w6r-GT-qGG"/>
                             <constraint firstItem="kxV-DM-793" firstAttribute="centerX" secondItem="otZ-Cr-1mj" secondAttribute="centerX" id="y1n-nq-9Gz"/>
                         </constraints>
                     </view>
@@ -417,7 +437,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kqC-iD-Qeu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="1084"/>
+            <point key="canvasLocation" x="1712.8" y="1083.5082458770617"/>
         </scene>
         <!--Configurações-->
         <scene sceneID="Udq-xG-WZK">
@@ -450,38 +470,45 @@
                                 <attributedString key="attributedText">
                                     <fragment content="OU">
                                         <attributes>
-                                            <font key="NSFont" size="27" name=".SFNSText"/>
+                                            <font key="NSFont" size="27" name="ChalkboardSE-Bold"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzS-P8-FRl">
-                                <rect key="frame" x="112" y="266" width="150" height="150"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XzS-P8-FRl">
+                                <rect key="frame" x="16" y="433" width="343" height="150"/>
                                 <color key="backgroundColor" red="0.69065791369999996" green="0.89817661049999997" blue="0.48701816799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="QJI-Rg-DPM"/>
-                                    <constraint firstAttribute="width" constant="150" id="lKB-7V-kQw"/>
+                                    <constraint firstAttribute="width" constant="343" id="lKB-7V-kQw"/>
                                 </constraints>
-                                <state key="normal" title="Procurar...">
-                                    <color key="titleColor" red="0.090196080509999998" green="0.0" blue="0.30196079609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Procurar berço...">
+                                            <attributes>
+                                                <color key="NSColor" red="0.090196080509999998" green="0.0" blue="0.30196079609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="24" name="ChalkboardSE-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="75"/>
+                                        <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wifi.png" translatesAutoresizingMaskIntoConstraints="NO" id="p5j-mn-czj">
-                                <rect key="frame" x="131" y="175" width="113" height="83"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone_wifi.png" translatesAutoresizingMaskIntoConstraints="NO" id="p5j-mn-czj">
+                                <rect key="frame" x="62.5" y="175" width="250" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="83" id="349-Ny-7iR"/>
-                                    <constraint firstAttribute="width" constant="113" id="5qF-dY-jKY"/>
+                                    <constraint firstAttribute="height" constant="250" id="349-Ny-7iR"/>
+                                    <constraint firstAttribute="width" constant="250" id="5qF-dY-jKY"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.99926882982254028" green="0.93967330455780029" blue="0.66540676355361938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99920481443405151" green="0.86220759153366089" blue="0.8609049916267395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="p5j-mn-czj" firstAttribute="centerX" secondItem="Xi7-nA-b48" secondAttribute="centerX" id="0lE-F7-bnv"/>
                             <constraint firstItem="gnX-LW-O1Y" firstAttribute="trailing" secondItem="Xi7-nA-b48" secondAttribute="trailingMargin" id="3Sw-kA-xmC"/>
@@ -498,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BKD-NH-v1h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="2024"/>
+            <point key="canvasLocation" x="749.60000000000002" y="2023.5382308845578"/>
         </scene>
         <!--Tab Bar Controller View Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -533,8 +560,8 @@
         <image name="icone_moving_crib_Z.png" width="339" height="184"/>
         <image name="icone_moving_crib_vibrate.png" width="208" height="169"/>
         <image name="icone_temperature.png" width="116" height="115"/>
+        <image name="icone_wifi.png" width="321" height="324"/>
         <image name="wifi-32.png" width="32" height="32"/>
-        <image name="wifi.png" width="640" height="471"/>
         <image name="youtube-play-32.png" width="32" height="32"/>
     </resources>
 </document>

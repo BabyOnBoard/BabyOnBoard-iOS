@@ -50,6 +50,7 @@
 		55D087E91FB3D45100904135 /* icone_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D087DF1FB3D45000904135 /* icone_heart.png */; };
 		55D087EA1FB3D45100904135 /* icone_moving_crib_X.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D087E01FB3D45100904135 /* icone_moving_crib_X.png */; };
 		55D087EB1FB3D45100904135 /* icone_temperature.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D087E11FB3D45100904135 /* icone_temperature.png */; };
+		55D087EE1FB4BD7F00904135 /* icone_wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D087ED1FB4BD7E00904135 /* icone_wifi.png */; };
 		C4609676D00780C7718A9A65 /* Pods_BabyOnBoardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60D9D6F81D16C376B1C3DCD /* Pods_BabyOnBoardTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +120,7 @@
 		55D087DF1FB3D45000904135 /* icone_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_heart.png; sourceTree = "<group>"; };
 		55D087E01FB3D45100904135 /* icone_moving_crib_X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_moving_crib_X.png; sourceTree = "<group>"; };
 		55D087E11FB3D45100904135 /* icone_temperature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_temperature.png; sourceTree = "<group>"; };
+		55D087ED1FB4BD7E00904135 /* icone_wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_wifi.png; sourceTree = "<group>"; };
 		5B32EE448D66991C0E149AF1 /* Pods-BabyOnBoardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyOnBoardTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabyOnBoardTests/Pods-BabyOnBoardTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6928CB95C002CEE0F7D8CB47 /* Pods-BabyOnBoardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyOnBoardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabyOnBoardTests/Pods-BabyOnBoardTests.release.xcconfig"; sourceTree = "<group>"; };
 		7053CADD891B2DE0AA1CA280 /* Pods-BabyOnBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyOnBoard.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabyOnBoard/Pods-BabyOnBoard.release.xcconfig"; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 		55D087EC1FB3D45900904135 /* NewIcons */ = {
 			isa = PBXGroup;
 			children = (
+				55D087ED1FB4BD7E00904135 /* icone_wifi.png */,
 				55D087DE1FB3D45000904135 /* icone_crib_search.png */,
 				55D087D81FB3D44D00904135 /* icone_graph.png */,
 				55D087DF1FB3D45000904135 /* icone_heart.png */,
@@ -431,6 +434,7 @@
 				55A5CC3E1F59A4990032F754 /* heartbeat.png in Resources */,
 				55D087E21FB3D45100904135 /* icone_graph.png in Resources */,
 				55A5CC271F598A570032F754 /* crib-vertical.png in Resources */,
+				55D087EE1FB4BD7F00904135 /* icone_wifi.png in Resources */,
 				55D087E81FB3D45100904135 /* icone_crib_search.png in Resources */,
 				55A5CC1C1F59832A0032F754 /* wifi-32.png in Resources */,
 				55A5CC1B1F59832A0032F754 /* thermometer-three-quarters-32.png in Resources */,

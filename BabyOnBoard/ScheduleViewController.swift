@@ -16,7 +16,7 @@ class ScheduleViewController: UIViewController {
   
   override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.datePicker.backgroundColor = UIColor(red: 201/255, green: 214/255.0, blue: 253/255, alpha: 1.0)  
         // Do any additional setup after loading the view.
     }
 
