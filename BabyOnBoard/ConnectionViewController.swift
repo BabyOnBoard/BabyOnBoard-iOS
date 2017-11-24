@@ -10,7 +10,8 @@ import UIKit
 
 class ConnectionViewController: UIViewController {
 
-    override func viewDidLoad() {
+  @IBOutlet weak var addressTextField: UITextField!
+  override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -21,6 +22,9 @@ class ConnectionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+  @IBAction func searchCribAction(_ sender: Any) {
+    UserDefaults.standard.setValue(self.addressTextField.text ?? "", forKey: "crib_ip")
+  }
 
     /*
     // MARK: - Navigation

@@ -499,6 +499,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="searchCribAction:" destination="tH2-3e-5oj" eventType="touchUpInside" id="Rfw-gU-h6m"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone_wifi.png" translatesAutoresizingMaskIntoConstraints="NO" id="p5j-mn-czj">
                                 <rect key="frame" x="62.5" y="175" width="250" height="250"/>
@@ -522,6 +525,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Conexão" image="wifi-32.png" id="ZMg-qK-hfQ"/>
+                    <connections>
+                        <outlet property="addressTextField" destination="gnX-LW-O1Y" id="qan-Rg-SBp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BKD-NH-v1h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -541,9 +547,9 @@
                         <color key="selectedImageTintColor" red="0.33849650621414185" green="0.73093599081039429" blue="0.92497521638870239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="L8G-tg-sq8" kind="relationship" relationship="viewControllers" id="F1p-PC-PT2"/>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="tH2-3e-5oj" kind="relationship" relationship="viewControllers" id="6hv-50-HDv"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="L8G-tg-sq8" kind="relationship" relationship="viewControllers" id="F1p-PC-PT2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

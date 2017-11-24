@@ -13,7 +13,15 @@ import Alamofire
 class ApiConnector{
 
   //TODO: make an inputable address here!!
-  private static let apiUrl = "http://192.168.0.154:8000/api/v1"
+  private static var apiUrl:String {
+
+    get {
+      let address = UserDefaults.standard.string(forKey: "crib_ip") ?? ""
+
+      return   "http://" + address + ":8000/api/v1"
+
+    }
+  }
 
   private static let temperatureEndpoint = "/temperature/"
 

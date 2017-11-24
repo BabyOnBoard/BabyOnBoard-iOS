@@ -34,8 +34,10 @@ class FirstViewController: UIViewController{
   }
   
   @objc func loadYoutube(videoID:String) {
+
+    let address = UserDefaults.standard.string(forKey: "crib_ip") ?? ""
     guard
-      let youtubeURL = URL(string: "http://192.168.0.154:8081")
+      let youtubeURL = URL(string: "http://"+address+":8081")
       else { return }
     viewWebView.loadRequest( URLRequest(url: youtubeURL) )
   }
