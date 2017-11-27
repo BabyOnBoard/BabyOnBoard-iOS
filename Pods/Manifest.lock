@@ -1,15 +1,48 @@
 PODS:
   - Alamofire (4.5.1)
   - LTMorphingLabel (0.5.5)
+  - OHHTTPStubs/Core (6.1.0)
+  - OHHTTPStubs/Default (6.1.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (6.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (6.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (6.1.0)
+  - OHHTTPStubs/Swift (6.1.0):
+    - OHHTTPStubs/Default
+  - SWHttpTrafficRecorder (1.0.2)
+  - SwifterSwift (4.1.0):
+    - SwifterSwift/AppKit (= 4.1.0)
+    - SwifterSwift/CoreGraphics (= 4.1.0)
+    - SwifterSwift/CoreLocation (= 4.1.0)
+    - SwifterSwift/Foundation (= 4.1.0)
+    - SwifterSwift/SwiftStdlib (= 4.1.0)
+    - SwifterSwift/UIKit (= 4.1.0)
+  - SwifterSwift/AppKit (4.1.0)
+  - SwifterSwift/CoreGraphics (4.1.0)
+  - SwifterSwift/CoreLocation (4.1.0)
+  - SwifterSwift/Foundation (4.1.0)
+  - SwifterSwift/SwiftStdlib (4.1.0)
+  - SwifterSwift/UIKit (4.1.0)
 
 DEPENDENCIES:
   - Alamofire
   - LTMorphingLabel
+  - OHHTTPStubs/Swift
+  - SWHttpTrafficRecorder
+  - SwifterSwift
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   LTMorphingLabel: 86464e41c3394dbf1ad098442ed4dcf8891ba975
+  OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
+  SWHttpTrafficRecorder: 6c0804d3f8edf9c7f3a1e0eec9f6bf5e4b241b9f
+  SwifterSwift: 4d962b5d653760b85266832aff6ab6d08c1b7974
 
-PODFILE CHECKSUM: 901e1c3d5617df22dc84136e6ae6e91a0eddb209
+PODFILE CHECKSUM: 093a6814bb1d4fb5dcf168b7e34f43bcc60d5015
 
 COCOAPODS: 1.3.1

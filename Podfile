@@ -8,8 +8,14 @@ target 'BabyOnBoard' do
   # Pods for BabyOnBoard
   pod 'Alamofire'
   pod 'LTMorphingLabel'
+  # testing pods
+  pod 'SWHttpTrafficRecorder'
+  pod 'OHHTTPStubs/Swift'
+  pod 'SwifterSwift'
+  
   target 'BabyOnBoardTests' do
     inherit! :search_paths
+
     # Pods for testing
   end
 
