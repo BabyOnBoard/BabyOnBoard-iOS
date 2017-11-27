@@ -192,7 +192,6 @@
 				55A5CC2D1F5990D50032F754 /* ConnectionViewController.swift */,
 				55A5CC141F58E9040032F754 /* TabBarControllerViewController.swift */,
 				55A5CC2F1F59978C0032F754 /* ScheduleViewController.swift */,
-				55D087D91FB3D44E00904135 /* icone_breathing.png */,
 				55D087EC1FB3D45900904135 /* NewIcons */,
 				55A5CC281F598A5D0032F754 /* Resources */,
 				55A5CBE81F58B16F0032F754 /* Main.storyboard */,
@@ -265,6 +264,7 @@
 		55D087EC1FB3D45900904135 /* NewIcons */ = {
 			isa = PBXGroup;
 			children = (
+				55D087D91FB3D44E00904135 /* icone_breathing.png */,
 				55D087ED1FB4BD7E00904135 /* icone_wifi.png */,
 				55D087DE1FB3D45000904135 /* icone_crib_search.png */,
 				55D087D81FB3D44D00904135 /* icone_graph.png */,
