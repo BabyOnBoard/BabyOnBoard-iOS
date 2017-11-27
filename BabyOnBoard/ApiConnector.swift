@@ -16,7 +16,8 @@ class ApiConnector{
   private static var apiUrl:String {
 
     get {
-      let address = UserDefaults.standard.string(forKey: "crib_ip") ?? ""
+      let address = UserDefaults.standard.string(forKey: "crib_ip") ?? "0.0.0.0"
+
 
       return   "http://" + address + ":8000/api/v1"
 
@@ -30,6 +31,8 @@ class ApiConnector{
   private static let breathingEndpoint = "/breathing/"
 
   private static let movementEndpoint = "/movement/"
+
+  private static let noiseEndpoint = "/noise/"
 
 
   static func temperature(year:Int = 0, month:Int = 0, day:Int = 0,
@@ -99,6 +102,27 @@ class ApiConnector{
 
   }
 
+  static func noise(year:Int = 0, month:Int = 0, day:Int = 0,
+                        success: @escaping (AnyObject) -> Void = {_ in },
+                        failure: @escaping (NSError) -> Void = {_ in }) -> Void{
+    //    let params: Parameters = userInfo
+    var url = apiUrl + noiseEndpoint
+
+    if year != 0 {
+      url = url + year.description
+    }
+    if month != 0{
+      url = url + "/" + String(format: "%02d", month)
+    }
+    if day != 0{
+      url = url + "/" + String(format: "%02d", day)
+    }
+
+    ApiConnector.alamofireGET(url: url,
+                              successCallback: success,
+                              failureCallBack: failure)
+
+  }
 
   static func movement(type:String, duration:Int,
                         success: @escaping (AnyObject) -> Void = {_ in },
