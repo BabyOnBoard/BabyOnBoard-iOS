@@ -7,6 +7,9 @@
 //
 
 import XCTest
+import OHHTTPStubs
+import SwifterSwift
+
 @testable import BabyOnBoard
 
 class BabyOnBoardTests: XCTestCase {
@@ -17,20 +20,172 @@ class BabyOnBoardTests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        OHHTTPStubs.removeAllStubs()
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testTemperature() {
+      // Arrange
+      // Setup network stubs
+      let testHost = "0.0.0.0"
+
+      let stubbedJSON = [
+        "id": 300,
+        "temperature": "38.9",
+        "date": "2017-11-24",
+        "time": "19:46:39.395240"
+        ]
+        as [String : AnyObject]
+
+      //check again the path format!
+      stub(condition:isHost(testHost) && isMethodGET() || isMethodPOST()) { request in
+        print("inside STUB \(request)")
+        return OHHTTPStubsResponse(
+          jsonObject: stubbedJSON,
+          statusCode: 200,
+          headers: .none
+        )
+      }
+
+      let expectation = self.expectation(description: "calls the callback with a resource object")
+
+      let success = { (result:AnyObject) -> Void in
+        let json = result as? Dictionary<String, AnyObject> ?? [:]
+        expectation.fulfill()
+        XCTAssertEqual(json.jsonString(), stubbedJSON.jsonString());
+      }
+
+      let error = { (result:NSError) -> Void in
+        print("ERROR - \(result)")
+        XCTAssertTrue(false)
+      }
+
+      // Setup system under test
+      ApiConnector.temperature(success:success,failure:error)
+      self.waitForExpectations(timeout: 10.0, handler: .none)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+
+  func testHeartbeats() {
+    // Arrange
+    // Setup network stubs
+    let testHost = "0.0.0.0"
+
+    let stubbedJSON = [
+      "id": 254,
+      "beats": 67,
+      "date": "2017-11-10",
+      "time": "15:41:29.357777"
+      ]
+      as [String : Any]
+
+    //check again the path format!
+    stub(condition:isHost(testHost) && isMethodGET() || isMethodPOST()) { request in
+      print("inside STUB \(request)")
+      return OHHTTPStubsResponse(
+        jsonObject: stubbedJSON,
+        statusCode: 200,
+        headers: .none
+      )
     }
+
+    let expectation = self.expectation(description: "calls the callback with a resource object")
+
+    let success = { (result:AnyObject) -> Void in
+      let json = result as? Dictionary<String, AnyObject> ?? [:]
+      expectation.fulfill()
+      XCTAssertEqual(json.jsonString(), stubbedJSON.jsonString());
+    }
+
+    let error = { (result:NSError) -> Void in
+      print("ERROR - \(result)")
+      XCTAssertTrue(false)
+    }
+
+    // Setup system under test
+    ApiConnector.heartbeat(success:success,failure:error)
+
+    self.waitForExpectations(timeout: 10.0, handler: .none)
+  }
+
+  func testBreathing() {
+    // Arrange
+    // Setup network stubs
+    let testHost = "0.0.0.0"
+
+    let stubbedJSON = [
+      "id": 254,
+      "is_breathing": true,
+      "date": "2017-11-10",
+      "time": "15:41:29.359052"
+      ]
+      as [String : Any]
+
+    //check again the path format!
+    stub(condition:isHost(testHost) && isMethodGET() || isMethodPOST()) { request in
+      print("inside STUB \(request)")
+      return OHHTTPStubsResponse(
+        jsonObject: stubbedJSON,
+        statusCode: 200,
+        headers: .none
+      )
+    }
+
+    let expectation = self.expectation(description: "calls the callback with a resource object")
+
+    let success = { (result:AnyObject) -> Void in
+      let json = result as? Dictionary<String, AnyObject> ?? [:]
+      expectation.fulfill()
+      XCTAssertEqual(json.jsonString(), stubbedJSON.jsonString());
+    }
+
+    let error = { (result:NSError) -> Void in
+      print("ERROR - \(result)")
+      XCTAssertTrue(false)
+    }
+
+    // Setup system under test
+    ApiConnector.breathing(success:success,failure:error)
+
+    self.waitForExpectations(timeout: 10.0, handler: .none)
+  }
+
+  func testNoise() {
+    // Arrange
+    // Setup network stubs
+    let testHost = "0.0.0.0"
+
+    let stubbedJSON = [
+      "is_crying": false
+      ]
+      as [String : Any]
+
+    //check again the path format!
+    stub(condition:isHost(testHost) && isMethodGET() || isMethodPOST()) { request in
+      print("inside STUB \(request)")
+      return OHHTTPStubsResponse(
+        jsonObject: stubbedJSON,
+        statusCode: 200,
+        headers: .none
+      )
+    }
+
+    let expectation = self.expectation(description: "calls the callback with a resource object")
+
+    let success = { (result:AnyObject) -> Void in
+      let json = result as? Dictionary<String, AnyObject> ?? [:]
+      expectation.fulfill()
+      XCTAssertEqual(json.jsonString(), stubbedJSON.jsonString());
+    }
+
+    let error = { (result:NSError) -> Void in
+      print("ERROR - \(result)")
+      XCTAssertTrue(false)
+    }
+
+    // Setup system under test
+    ApiConnector.noise(success:success,failure:error)
+
+    self.waitForExpectations(timeout: 10.0, handler: .none)
+  }
     
 }
