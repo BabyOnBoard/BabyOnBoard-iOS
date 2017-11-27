@@ -10,19 +10,14 @@ import UIKit
 import Alamofire
 //import SwifterSwift
 
-class ApiConnector{
+class ApiConnector {
 
   //TODO: make an inputable address here!!
-  private static var apiUrl:String {
-
-    get {
+  private static var apiUrl: String {
       let address = UserDefaults.standard.string(forKey: "crib_ip") ?? "0.0.0.0"
 
-
       return   "http://" + address + ":8000/api/v1"
-
     }
-  }
 
   private static let temperatureEndpoint = "/temperature/"
 
@@ -34,43 +29,42 @@ class ApiConnector{
 
   private static let noiseEndpoint = "/noise/"
 
-
-  static func temperature(year:Int = 0, month:Int = 0, day:Int = 0,
+  static func temperature(year: Int = 0, month: Int = 0, day: Int = 0,
                           success: @escaping (AnyObject) -> Void = {_ in },
-                                 failure: @escaping (NSError) -> Void = {_ in }) -> Void{
+                          failure: @escaping (NSError) -> Void = {_ in }) {
 //    let params: Parameters = userInfo
     var url = apiUrl + temperatureEndpoint
 
     if year != 0 {
-      url = url + year.description
+      url += year.description
     }
-    if month != 0{
-      url = url + "/" + String(format: "%02d", month)
+    if month != 0 {
+      url += "/" + String(format: "%02d", month)
     }
-    if day != 0{
-      url = url + "/" + String(format: "%02d", day)
+    if day != 0 {
+      url += "/" + String(format: "%02d", day)
     }
 
     ApiConnector.alamofireGET(url: url,
-                        successCallback: success,
-                        failureCallBack: failure)
+                              successCallback: success,
+                              failureCallBack: failure)
 
   }
 
-  static func breathing(year:Int = 0, month:Int = 0, day:Int = 0,
+  static func breathing(year: Int = 0, month: Int = 0, day: Int = 0,
                         success: @escaping (AnyObject) -> Void = {_ in },
-                        failure: @escaping (NSError) -> Void = {_ in }) -> Void{
+                        failure: @escaping (NSError) -> Void = {_ in }) {
     //    let params: Parameters = userInfo
     var url = apiUrl + breathingEndpoint
 
     if year != 0 {
-      url = url + year.description
+      url += year.description
     }
-    if month != 0{
-      url = url + "/" + String(format: "%02d", month)
+    if month != 0 {
+      url += "/" + String(format: "%02d", month)
     }
-    if day != 0{
-      url = url + "/" + String(format: "%02d", day)
+    if day != 0 {
+      url += "/" + String(format: "%02d", day)
     }
 
     ApiConnector.alamofireGET(url: url,
@@ -79,21 +73,20 @@ class ApiConnector{
 
   }
 
-
-  static func heartbeat(year:Int = 0, month:Int = 0, day:Int = 0,
-                          success: @escaping (AnyObject) -> Void = {_ in },
-                          failure: @escaping (NSError) -> Void = {_ in }) -> Void{
+  static func heartbeat(year: Int = 0, month: Int = 0, day: Int = 0,
+                        success: @escaping (AnyObject) -> Void = {_ in },
+                        failure: @escaping (NSError) -> Void = {_ in }) {
     //    let params: Parameters = userInfo
     var url = apiUrl + heartbeatEndpoint
 
     if year != 0 {
-      url = url + year.description
+      url += year.description
     }
-    if month != 0{
-      url = url + "/" + String(format: "%02d", month)
+    if month != 0 {
+      url += "/" + String(format: "%02d", month)
     }
-    if day != 0{
-      url = url + "/" + String(format: "%02d", day)
+    if day != 0 {
+      url += "/" + String(format: "%02d", day)
     }
 
     ApiConnector.alamofireGET(url: url,
@@ -102,20 +95,20 @@ class ApiConnector{
 
   }
 
-  static func noise(year:Int = 0, month:Int = 0, day:Int = 0,
-                        success: @escaping (AnyObject) -> Void = {_ in },
-                        failure: @escaping (NSError) -> Void = {_ in }) -> Void{
+  static func noise(year: Int = 0, month: Int = 0, day: Int = 0,
+                    success: @escaping (AnyObject) -> Void = {_ in },
+                    failure: @escaping (NSError) -> Void = {_ in }) {
     //    let params: Parameters = userInfo
     var url = apiUrl + noiseEndpoint
 
     if year != 0 {
-      url = url + year.description
+      url += year.description
     }
-    if month != 0{
-      url = url + "/" + String(format: "%02d", month)
+    if month != 0 {
+      url += "/" + String(format: "%02d", month)
     }
-    if day != 0{
-      url = url + "/" + String(format: "%02d", day)
+    if day != 0 {
+      url += "/" + String(format: "%02d", day)
     }
 
     ApiConnector.alamofireGET(url: url,
@@ -124,14 +117,13 @@ class ApiConnector{
 
   }
 
-  static func movement(type:String, duration:Int,
-                        success: @escaping (AnyObject) -> Void = {_ in },
-                        failure: @escaping (NSError) -> Void = {_ in }) -> Void{
+  static func movement(type: String, duration: Int,
+                       success: @escaping (AnyObject) -> Void = {_ in },
+                       failure: @escaping (NSError) -> Void = {_ in }) {
     //    let params: Parameters = userInfo
     let url = apiUrl + movementEndpoint
-    let parameters = ["type":type,
-                      "duration":duration] as [String : Any]
-    
+    let parameters = ["type": type,
+                      "duration": duration] as [String: Any]
 
     ApiConnector.alamofirePOST(url: url,
                                parameters: parameters,
@@ -141,22 +133,21 @@ class ApiConnector{
 
 }
 
-
-
 extension ApiConnector {
 
   internal static func alamofireGET(url: String,
                                     successCallback:@escaping (AnyObject) -> Void = {_ in } ,
-                                    failureCallBack: @escaping (NSError) -> Void = {_ in } ) -> Void {
+                                    failureCallBack: @escaping (NSError) -> Void = {_ in }) {
+
     Alamofire.request(url,
-                      method:.get,
+                      method: .get,
                       encoding: JSONEncoding.default)
       .validate(statusCode: 200..<300)
       .responseJSON { response in
 
-        switch response.result{
+        switch response.result {
         case .success:
-          if let JSON = response.result.value as AnyObject?{
+          if let JSON = response.result.value as AnyObject? {
             successCallback(JSON)
           }
           break
@@ -167,21 +158,20 @@ extension ApiConnector {
     }
   }
 
-
   internal static func alamofirePOST(url: String,
-                                     parameters:Parameters,
+                                     parameters: Parameters,
                                      successCallback:@escaping (AnyObject) -> Void = {_ in } ,
-                                     failureCallBack: @escaping (NSError) -> Void = {_ in } ) -> Void {
+                                     failureCallBack: @escaping (NSError) -> Void = {_ in }) {
       Alamofire.request(url,
-                      method:.post,
+                      method: .post,
                       parameters: parameters,
                       encoding: JSONEncoding.default)
       .validate(statusCode: 200..<300)
       .responseJSON { response in
 
-        switch response.result{
+        switch response.result {
         case .success:
-          if let JSON = response.result.value as AnyObject?{
+          if let JSON = response.result.value as AnyObject? {
             successCallback(JSON)
           }
           break
@@ -194,18 +184,17 @@ extension ApiConnector {
 
   internal static func alamofireDELETE(url: String,
                                        successCallback:@escaping (AnyObject) -> Void = {_ in } ,
-                                       failureCallBack: @escaping (NSError) -> Void = {_ in } ) -> Void {
-
+                                       failureCallBack: @escaping (NSError) -> Void = {_ in }) {
 
     Alamofire.request(url,
-                      method:.delete,
+                      method: .delete,
                       encoding: JSONEncoding.default)
       .validate(statusCode: 200..<300)
       .responseJSON { response in
 
-        switch response.result{
+        switch response.result {
         case .success:
-          if let JSON = response.result.value as AnyObject?{
+          if let JSON = response.result.value as AnyObject? {
             successCallback(JSON)
           }
           break

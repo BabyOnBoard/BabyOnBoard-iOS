@@ -21,7 +21,7 @@ class ConnectionViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
   @IBAction func searchCribAction(_ sender: Any) {
     UserDefaults.standard.setValue(self.addressTextField.text ?? "", forKey: "crib_ip")
   }

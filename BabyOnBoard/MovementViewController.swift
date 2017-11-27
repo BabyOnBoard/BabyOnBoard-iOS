@@ -10,7 +10,7 @@ import UIKit
 
 class MovementViewController: UIViewController {
 
-  var selectedMovement:String = ""
+  var selectedMovement: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,18 +22,17 @@ class MovementViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-  
-  
+
   @IBAction func horizontalCribButtonAction(_ sender: Any) {
     self.selectedMovement = "horizontal"
     self.performSegue(withIdentifier: "toSchedule", sender: self)
   }
-  
+
   @IBAction func verticalCribButtonAction(_ sender: Any) {
     self.selectedMovement = "vertical"
     self.performSegue(withIdentifier: "toSchedule", sender: self)
   }
-    
+
   @IBAction func vibrateCribButtonAction(_ sender: Any) {
     self.selectedMovement = "vibrate"
     self.performSegue(withIdentifier: "toSchedule", sender: self)
@@ -47,11 +46,10 @@ class MovementViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-      var destination = segue.destination as! ScheduleViewController
+      let destination = segue.destination as? ScheduleViewController ?? ScheduleViewController()
       destination.movementType = self.selectedMovement
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-
 
     }
 

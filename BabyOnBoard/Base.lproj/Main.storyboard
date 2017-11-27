@@ -381,7 +381,7 @@
                                 <rect key="frame" x="78" y="38" width="218" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="EiV-Ln-E2F"/>
-                                    <constraint firstAttribute="width" constant="218" id="yCC-qJ-c3a"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="218" id="yCC-qJ-c3a"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Ajuste o tempo...">
@@ -468,7 +468,7 @@
                                 <rect key="frame" x="167" y="96" width="41" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="F8T-BW-mCH"/>
-                                    <constraint firstAttribute="width" constant="41" id="g7C-Hc-TnN"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="41" id="g7C-Hc-TnN"/>
                                 </constraints>
                                 <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>

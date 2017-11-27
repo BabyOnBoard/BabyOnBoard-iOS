@@ -8,10 +8,10 @@
 
 import UIKit
 
-class FirstViewController: UIViewController{
+class FirstViewController: UIViewController {
 
   @IBOutlet weak var viewWebView: UIWebView!
-  
+
   @IBOutlet weak var heartbeatLabel: UILabel!
   @IBOutlet weak var temperatureLabel: UILabel!
   @IBOutlet weak var breathingLabel: UILabel!
@@ -23,8 +23,11 @@ class FirstViewController: UIViewController{
 
     self.viewWebView.alpha = 0
 
-    Timer.scheduledTimer(timeInterval:5.0, target: self, selector: #selector(FirstViewController.updateAllValues), userInfo: nil, repeats: true)
-
+    Timer.scheduledTimer(timeInterval: 5.0,
+                         target: self,
+                         selector: #selector(FirstViewController.updateAllValues),
+                         userInfo: nil,
+                         repeats: true)
 
   }
 
@@ -32,8 +35,8 @@ class FirstViewController: UIViewController{
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-  
-  @objc func loadYoutube(videoID:String) {
+
+  @objc func loadYoutube(videoID: String) {
 
     let address = UserDefaults.standard.string(forKey: "crib_ip") ?? ""
     guard
@@ -54,7 +57,7 @@ class FirstViewController: UIViewController{
     }
 
   }
-  
+
   @IBAction func statisticsButtonAction(_ sender: Any) {
     print("statistics Button Pressed")
 
@@ -64,7 +67,7 @@ class FirstViewController: UIViewController{
 
     self.view.isUserInteractionEnabled = false
     updateWebViewFrame()
-    delay(2.0){
+    delay(2.0) {
       self.view.isUserInteractionEnabled = true
       self.updateTemperature()
       self.updateBreathing()
@@ -73,23 +76,22 @@ class FirstViewController: UIViewController{
 
   }
 
-
-  //MARK:UpdateLabelsRequest
-  func updateTemperature(){
-    let success = { (result:AnyObject) -> Void in
-      let json = result as! Dictionary<String,AnyObject>
+  // MARK: UpdateLabelsRequest
+  func updateTemperature() {
+    let success = { (result: AnyObject) -> Void in
+      let json = result as? [String: AnyObject] ?? [:]
       self.temperatureLabel.text = (json["temperature"] as? String ?? "--") + "ºC"
     }
 
-    let error = { (result:NSError) -> Void in
+    let error = { (result: NSError) -> Void in
       print("AWESOME ERROR \(result)")
     }
-    ApiConnector.temperature(success: success, failure: error);
+    ApiConnector.temperature(success: success, failure: error)
   }
 
-  func updateBreathing(){
-    let success = { (result:AnyObject) -> Void in
-      let json = result as! Dictionary<String,AnyObject>
+  func updateBreathing() {
+    let success = { (result: AnyObject) -> Void in
+      let json = result as? [String: AnyObject] ?? [:]
       let isBreathing = json["is_breathing"] as? Bool
       var labelText = ""
 
@@ -102,26 +104,26 @@ class FirstViewController: UIViewController{
 
     }
 
-    let error = { (result:NSError) -> Void in
+    let error = { (result: NSError) -> Void in
       print("AWESOME ERROR \(result)")
     }
-    ApiConnector.breathing(success: success, failure: error);
+    ApiConnector.breathing(success: success, failure: error)
   }
 
-  func updateHeartbeat(){
-    let success = { (result:AnyObject) -> Void in
-      let json = result as! Dictionary<String,AnyObject>
+  func updateHeartbeat() {
+    let success = { (result: AnyObject) -> Void in
+      let json = result as? [String: AnyObject] ?? [:]
       let heartbeat = (json["beats"] as? Float ?? 0.0)
       self.heartbeatLabel.text = String(heartbeat ) + "bpm"
     }
 
-    let error = { (result:NSError) -> Void in
+    let error = { (result: NSError) -> Void in
       print("AWESOME ERROR \(result)")
     }
-    ApiConnector.heartbeat(success: success, failure: error);
+    ApiConnector.heartbeat(success: success, failure: error)
   }
 
-  @objc func updateAllValues(){
+  @objc func updateAllValues() {
     updateWebViewFrame()
     self.updateTemperature()
     self.updateBreathing()
@@ -129,16 +131,15 @@ class FirstViewController: UIViewController{
     print("timer \(Date())")
   }
 
-
-  //MARK: Utilities
-  func delay(_ delay: Double, closure: @escaping ()->(Void)) {
+  // MARK: Utilities
+  func delay(_ delay: Double, closure: @escaping () -> Void) {
     let when = DispatchTime.now() + 1.5
 
     DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
   }
 
-  func updateWebViewFrame(){
-    
+  func updateWebViewFrame() {
+
     let contentSize = viewWebView.scrollView.contentSize
     let viewSize = viewWebView.bounds.size
     viewWebView.contentMode = .scaleAspectFit
@@ -161,4 +162,3 @@ class FirstViewController: UIViewController{
   }
 
 }
-
