@@ -11,10 +11,13 @@ import UIKit
 class FirstViewController: UIViewController {
 
   @IBOutlet weak var viewWebView: UIWebView!
-
   @IBOutlet weak var heartbeatLabel: UILabel!
   @IBOutlet weak var temperatureLabel: UILabel!
   @IBOutlet weak var breathingLabel: UILabel!
+
+  var isVisible: Bool = false
+
+  var noiseTimer: Timer = Timer.init()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,6 +31,10 @@ class FirstViewController: UIViewController {
                          selector: #selector(FirstViewController.updateAllValues),
                          userInfo: nil,
                          repeats: true)
+
+    self.noiseTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
+      self.checkNoise()
+    }
 
   }
 
@@ -46,6 +53,7 @@ class FirstViewController: UIViewController {
   }
 
   override func viewDidAppear(_ animated: Bool) {
+    self.isVisible = true
     delay(0.2) {
       self.updateWebViewFrame()
       UIView.animate(withDuration: 0.3,
@@ -55,7 +63,10 @@ class FirstViewController: UIViewController {
       },
                                  completion: nil)
     }
+  }
 
+  override func viewWillDisappear(_ animated: Bool) {
+    self.isVisible = false;
   }
 
   @IBAction func statisticsButtonAction(_ sender: Any) {
@@ -128,7 +139,7 @@ class FirstViewController: UIViewController {
     self.updateTemperature()
     self.updateBreathing()
     self.updateHeartbeat()
-    print("timer \(Date())")
+//    print("timer \(Date())")
   }
 
   // MARK: Utilities
@@ -146,6 +157,7 @@ class FirstViewController: UIViewController {
     viewWebView.scrollView.contentMode = .scaleAspectFit
     viewWebView.scrollView.bounces = false
     viewWebView.scrollView.isScrollEnabled = false
+
     if #available(iOS 11.0, *) {
       viewWebView.scrollView.contentInsetAdjustmentBehavior = .never
     } else {
@@ -158,7 +170,59 @@ class FirstViewController: UIViewController {
     viewWebView.scrollView.minimumZoomScale = rw
     viewWebView.scrollView.maximumZoomScale = rw
     viewWebView.scrollView.zoomScale = rw
+  }
 
+  func checkNoise() {
+    let success = { (result: AnyObject) -> Void in
+      let isCrying = result["is_crying"] as? Bool ?? false
+//      print("CRY: \(String(describing: isCrying))")
+      if self.isVisible && isCrying == true {
+        self.presentAlert()
+      }
+    }
+
+    let error = { (result: NSError) -> Void in
+      print("ERROR:There was an error while getting noise")
+    }
+
+    if self.isVisible {
+      ApiConnector.noise(success: success, failure: error)
+    }
+  }
+
+  func presentAlert() {
+
+    let snooze = { (action: UIAlertAction) in
+      self.noiseTimer.invalidate(); // Deactivate old timer
+
+      //activate old timer after 5 min
+      Timer.scheduledTimer(withTimeInterval: 300, repeats: false, block: { _ in
+        self.noiseTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
+          self.checkNoise()
+        }
+      })
+    }
+
+    let deactivateAlarm = { (action: UIAlertAction) in
+      self.noiseTimer.invalidate()
+    }
+
+    let alert = UIAlertController(title: "Alerta de Choro",
+                                  message: "Detectamos um barulho incomum no quarto," +
+                                  " verifique se o bebê está acordado.",
+                                  preferredStyle: UIAlertControllerStyle.alert)
+    alert.addAction(UIAlertAction(title: "Soneca!", style: UIAlertActionStyle.default, handler: snooze))
+    alert.addAction(UIAlertAction(title: "Parar!", style: UIAlertActionStyle.default, handler: deactivateAlarm))
+
+    self.present(alert, animated: true, completion: nil)
   }
 
 }
+
+
+
+
+
+
+
+

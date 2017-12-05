@@ -15,11 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
     guard let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView else {
       print("Bould Not het Status Bar view")
       return true
     }
-
     statusBar.backgroundColor = UIColor(red: 201/237, green: 214/109, blue: 253/126, alpha: 1.0)
     return true
   }
