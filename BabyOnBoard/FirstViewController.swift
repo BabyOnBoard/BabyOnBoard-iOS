@@ -19,10 +19,11 @@ class FirstViewController: UIViewController {
 
   var noiseTimer: Timer = Timer.init()
 
+  // MARK: Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    self.loadYoutube(videoID: "fpDXt6QNmBI")
+
+    self.loadVideo()
 
     self.viewWebView.alpha = 0
 
@@ -36,20 +37,6 @@ class FirstViewController: UIViewController {
       self.checkNoise()
     }
 
-  }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
-  @objc func loadYoutube(videoID: String) {
-
-    let address = UserDefaults.standard.string(forKey: "crib_ip") ?? ""
-    guard
-      let youtubeURL = URL(string: "http://"+address+":8081")
-      else { return }
-    viewWebView.loadRequest( URLRequest(url: youtubeURL) )
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -66,8 +53,10 @@ class FirstViewController: UIViewController {
   }
 
   override func viewWillDisappear(_ animated: Bool) {
-    self.isVisible = false;
+    self.isVisible = false
   }
+
+  // MARK: IBActions
 
   @IBAction func statisticsButtonAction(_ sender: Any) {
     print("statistics Button Pressed")
@@ -139,7 +128,23 @@ class FirstViewController: UIViewController {
     self.updateTemperature()
     self.updateBreathing()
     self.updateHeartbeat()
-//    print("timer \(Date())")
+  }
+
+  func checkNoise() {
+    let success = { (result: AnyObject) -> Void in
+      let isCrying = result["is_crying"] as? Bool ?? false
+      if self.isVisible && isCrying == true {
+        self.presentAlert()
+      }
+    }
+
+    let error = { (result: NSError) -> Void in
+      print("ERROR:There was an error while getting noise")
+    }
+
+    if self.isVisible {
+      ApiConnector.noise(success: success, failure: error)
+    }
   }
 
   // MARK: Utilities
@@ -172,22 +177,12 @@ class FirstViewController: UIViewController {
     viewWebView.scrollView.zoomScale = rw
   }
 
-  func checkNoise() {
-    let success = { (result: AnyObject) -> Void in
-      let isCrying = result["is_crying"] as? Bool ?? false
-//      print("CRY: \(String(describing: isCrying))")
-      if self.isVisible && isCrying == true {
-        self.presentAlert()
-      }
-    }
-
-    let error = { (result: NSError) -> Void in
-      print("ERROR:There was an error while getting noise")
-    }
-
-    if self.isVisible {
-      ApiConnector.noise(success: success, failure: error)
-    }
+  @objc func loadVideo() {
+    let address = UserDefaults.standard.string(forKey: "crib_ip") ?? ""
+    guard
+      let youtubeURL = URL(string: "http://"+address+":8081")
+      else { return }
+    viewWebView.loadRequest( URLRequest(url: youtubeURL) )
   }
 
   func presentAlert() {
@@ -216,13 +211,4 @@ class FirstViewController: UIViewController {
 
     self.present(alert, animated: true, completion: nil)
   }
-
 }
-
-
-
-
-
-
-
-
