@@ -24,17 +24,17 @@ class MovementViewController: UIViewController {
     }
 
   @IBAction func horizontalCribButtonAction(_ sender: Any) {
-    self.selectedMovement = "horizontal"
+    self.selectedMovement = "front"
     self.performSegue(withIdentifier: "toSchedule", sender: self)
   }
 
   @IBAction func verticalCribButtonAction(_ sender: Any) {
-    self.selectedMovement = "vertical"
+    self.selectedMovement = "side"
     self.performSegue(withIdentifier: "toSchedule", sender: self)
   }
 
   @IBAction func vibrateCribButtonAction(_ sender: Any) {
-    self.selectedMovement = "vibrate"
+    self.selectedMovement = "vibration"
     self.performSegue(withIdentifier: "toSchedule", sender: self)
   }
 

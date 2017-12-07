@@ -21,12 +21,16 @@ class ScheduleViewController: UIViewController {
     }
 
   @IBAction func initButtonAction(_ sender: Any) {
-    let secontsKeepMooving = datePicker.countDownDuration
+    let secontsKeepMooving = datePicker.countDownDuration/60
+
+    if Int(secontsKeepMooving) > 4 {
+      return
+    }
 
     print("MOVEMENT Type \(self.movementType) >> secondas \(secontsKeepMooving)")
 
     let success = { (result: AnyObject) -> Void in
-
+      self.presentAlertSuccess()
     }
 
     let error = { (result: NSError) -> Void in
@@ -34,7 +38,8 @@ class ScheduleViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
         return
       }
-      print("HOUVE UM ERRO")
+      self.presentAlert()
+      print("HOUVE UM ERRO \(String(describing:result))")
     }
 
     ApiConnector.movement(type: self.movementType,
@@ -51,4 +56,37 @@ class ScheduleViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+  func presentAlert() {
+
+    let snooze = { (action: UIAlertAction) in
+
+    }
+
+//    let deactivateAlarm = { (action: UIAlertAction) in
+//
+//    }
+
+    let alert = UIAlertController(title: "Erro",
+                                  message: "Error ao tentar ativar a movimentação do berço",
+                                  preferredStyle: UIAlertControllerStyle.alert)
+    alert.addAction(UIAlertAction(title: "ok", style: UIAlertActionStyle.default, handler: snooze))
+
+    self.present(alert, animated: true, completion: nil)
+  }
+
+  func presentAlertSuccess() {
+
+    let snooze = { (action: UIAlertAction) in
+      self.dismiss(animated: true, completion: nil)
+    }
+
+    let alert = UIAlertController(title: "Sucesso!",
+                                  message: "Comando para ativação enviado.",
+                                  preferredStyle: UIAlertControllerStyle.alert)
+    alert.addAction(UIAlertAction(title: "ok", style: UIAlertActionStyle.default, handler: snooze))
+
+    self.present(alert, animated: true, completion: nil)
+  }
+
 }

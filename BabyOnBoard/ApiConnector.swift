@@ -122,7 +122,7 @@ class ApiConnector {
                        failure: @escaping (NSError) -> Void = {_ in }) {
     //    let params: Parameters = userInfo
     let url = apiUrl + movementEndpoint
-    let parameters = ["type": type,
+    let parameters = ["status": type,
                       "duration": duration] as [String: Any]
 
     ApiConnector.alamofirePOST(url: url,
