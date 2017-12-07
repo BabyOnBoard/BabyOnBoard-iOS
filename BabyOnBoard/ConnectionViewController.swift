@@ -24,6 +24,7 @@ class ConnectionViewController: UIViewController {
 
   @IBAction func searchCribAction(_ sender: Any) {
     UserDefaults.standard.setValue(self.addressTextField.text ?? "", forKey: "crib_ip")
+    self.addressTextField.resignFirstResponder()
   }
 
     /*
