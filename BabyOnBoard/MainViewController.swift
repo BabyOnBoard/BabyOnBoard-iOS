@@ -91,13 +91,15 @@ class MainViewController: UIViewController {
   func updateBreathing() {
     let success = { (result: AnyObject) -> Void in
       let json = result as? [String: AnyObject] ?? [:]
-      let isBreathing = json["is_breathing"] as? Bool
-      var labelText = ""
+      let isBreathing = json["status"] as? String ?? "undefinded"
+      var labelText = "......"
 
-      if isBreathing == true {
-        labelText = "Normal"
-      } else {
+      if isBreathing == "absent" {
+        labelText = "Ausente"
+      } else if isBreathing == "no_breathing" {
         labelText = "Baixa"
+      } else if isBreathing == "breathing" {
+        labelText = "Normal"
       }
       self.breathingLabel.text = labelText
 
