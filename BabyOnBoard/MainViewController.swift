@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class MainViewController: UIViewController {
 
   @IBOutlet weak var viewWebView: UIWebView!
   @IBOutlet weak var heartbeatLabel: UILabel!
@@ -29,14 +29,13 @@ class FirstViewController: UIViewController {
 
     Timer.scheduledTimer(timeInterval: 5.0,
                          target: self,
-                         selector: #selector(FirstViewController.updateAllValues),
+                         selector: #selector(MainViewController.updateAllValues),
                          userInfo: nil,
                          repeats: true)
 
     self.noiseTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
       self.checkNoise()
     }
-
   }
 
   override func viewDidAppear(_ animated: Bool) {
